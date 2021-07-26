@@ -1,0 +1,4 @@
+Nombre,departamento,fecha,Mes 
+luis pepe,contador,20,abril
+jose alfonso,doctor,15,julio
+hector rodriguez,escritor,05,agosto
