@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package alquilerauto3;
+
 import java.time.LocalDate;
 
 /**
@@ -95,5 +95,12 @@ public class Alquiler {
         }
         return(costoTotal - descuento);
     }
+    public static boolean PuedeAlquilar(Alquiler[] historial, Cliente cliente)
+    {
+        for(int i=0; i< historial.length; i++)
+        {
 
+        }
+        return false;
+    }
 }
