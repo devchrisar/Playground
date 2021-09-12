@@ -20,68 +20,49 @@ public class AlquilerAuto5 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Alquiler[] historialAlquiler = new Alquiler[5];
-        Cliente cliente_1 = new Cliente("Cliente1",25,"Jose Manuel Raigoza");
-        Cliente cliente_2 = new Cliente("Cliente2",40,"Sandra Gonzales");
-        Cliente cliente_3 = new Cliente("Cliente3",25,"Marcos Perez");
+        Cliente cliente_1 = new Cliente("1015143634",23,"Juan");
+        
+        Cliente cliente_historial_1 = new Cliente("1015143634",23,"Juan");
+        Cliente cliente_historial_2 = new Cliente("1364726437",33,"Mateo");
+        Cliente cliente_historial_3 = new Cliente("9685432432",43,"Ana");
+        Cliente cliente_historial_4 = new Cliente("1015143634",23,"Juan");
+        Cliente cliente_historial_5 = new Cliente("4567987652",50,"Alfredo");
+        Cliente cliente_historial_6 = new Cliente("5468978655",58,"Gloria");
+        Cliente cliente_historial_7 = new Cliente("1015143634",23,"Juan");
         Auto auto_1 = new Auto("DBZ645",2,true);
         
-        Alquiler alquiler_1 = new Alquiler(cliente_1,auto_1,LocalDate.parse("12/06/2021",DateTimeFormatter.ofPattern("d/M/yyyy")),48);
-        Alquiler alquiler_2 = new Alquiler(cliente_2,auto_1,LocalDate.parse("12/07/2021",DateTimeFormatter.ofPattern("d/M/yyyy")),30);
-        Alquiler alquiler_3 = new Alquiler(cliente_1,auto_1,LocalDate.parse("14/07/2021",DateTimeFormatter.ofPattern("d/M/yyyy")),25);
-        Alquiler alquiler_4 = new Alquiler(cliente_3,auto_1,LocalDate.parse("14/07/2021",DateTimeFormatter.ofPattern("d/M/yyyy")),12);
-        Alquiler alquiler_5 = new Alquiler(cliente_1,auto_1,LocalDate.parse("16/07/2021",DateTimeFormatter.ofPattern("d/M/yyyy")),8);
+        Alquiler[] historial = new Alquiler[7];
+        historial[0] = new Alquiler(cliente_historial_1,auto_1,LocalDate.parse("2021-02-14"),3);
+        historial[1] = new Alquiler(cliente_historial_2,auto_1,LocalDate.parse("2021-02-15"),2);
+        historial[2] = new Alquiler(cliente_historial_3,auto_1,LocalDate.parse("2021-02-16"),2);
+        historial[3] = new Alquiler(cliente_historial_4,auto_1,LocalDate.parse("2021-02-18"),5);
+        historial[4] = new Alquiler(cliente_historial_5,auto_1,LocalDate.parse("2021-02-18"),2);
+        historial[5] = new Alquiler(cliente_historial_6,auto_1,LocalDate.parse("2021-03-15"),8);
+        historial[6] = new Alquiler(cliente_historial_7,auto_1,LocalDate.parse("2021-03-20"),2);
         
-        historialAlquiler[0] = alquiler_1;
-        historialAlquiler[1] = alquiler_2;
-        historialAlquiler[2] = alquiler_3;
-        historialAlquiler[3] = alquiler_4;
-        historialAlquiler[4] = alquiler_5;
+        boolean puedeAlquilar = Alquiler.PuedeAlquilar(historial, cliente_1);
+        System.out.println("1° CASO DE PRUEBA");
+        System.out.println(puedeAlquilar);
         
-        System.out.println("Primer caso de prueba");
-        Cliente clienteActual_1 = cliente_1;
-        Auto  autoActual_1 = auto_1;
-        LocalDate fechaActual = LocalDate.parse("19/08/2021",DateTimeFormatter.ofPattern("d/M/yyy"));
-        int horasAlquilerActual = 8;
-        Alquiler alquilerActual = new Alquiler(clienteActual_1,autoActual_1, fechaActual,horasAlquilerActual);
-        double costo = alquilerActual.CalcularCosto(true);
-        System.out.println( (int)costo);
+        cliente_historial_1 = new Cliente("9078968512",58,"Camila");
+        cliente_historial_2 = new Cliente("1364726437",33,"Mateo");
+        cliente_historial_3 = new Cliente("9685432432",43,"Ana");
+        cliente_historial_4 = new Cliente("847534654",38,"Liliana");
+        cliente_historial_5 = new Cliente("4567987652",50,"Alfredo");
+        cliente_historial_6 = new Cliente("5468978655",58,"Gloria");
+        cliente_historial_7 = new Cliente("0896756443",23,"Mario");
+
+        historial[0] = new Alquiler(cliente_historial_1,auto_1,LocalDate.parse("2021-02-14"),3);
+        historial[1] = new Alquiler(cliente_historial_2,auto_1,LocalDate.parse("2021-02-15"),2);
+        historial[2] = new Alquiler(cliente_historial_3,auto_1,LocalDate.parse("2021-02-16"),2);
+        historial[3] = new Alquiler(cliente_historial_4,auto_1,LocalDate.parse("2021-02-18"),5);
+        historial[4] = new Alquiler(cliente_historial_5,auto_1,LocalDate.parse("2021-02-18"),2);
+        historial[5] = new Alquiler(cliente_historial_6,auto_1,LocalDate.parse("2021-03-15"),8);
+        historial[6] = new Alquiler(cliente_historial_7,auto_1,LocalDate.parse("2021-03-20"),2);
         
-        System.out.println("Segundo caso de prueba");
-        fechaActual = LocalDate.parse("19/07/2021",DateTimeFormatter.ofPattern("d/M/yyy"));
-        auto_1 = new Auto("DBZ645",2,false);
-        autoActual_1 = auto_1;
-        horasAlquilerActual = 8;
-        alquilerActual = new Alquiler(clienteActual_1,autoActual_1, fechaActual, horasAlquilerActual);
-        costo = alquilerActual.CalcularCosto(false);
-        System.out.println( (int)costo);
-        
-        System.out.println("Tercer caso de prueba");
-        fechaActual = LocalDate.parse("19/07/2021",DateTimeFormatter.ofPattern("d/M/yyy"));
-        auto_1 = new Auto("DBZ645",2,true);
-        horasAlquilerActual = 124;
-        autoActual_1 = auto_1;
-        alquilerActual = new Alquiler(clienteActual_1,autoActual_1, fechaActual, horasAlquilerActual);
-        costo = alquilerActual.CalcularCosto(true);
-        System.out.println( (int)costo);
-        
-        System.out.println("Cuarto caso de prueba");
-        fechaActual = LocalDate.parse("19/07/2021",DateTimeFormatter.ofPattern("d/M/yyy"));
-        auto_1 = new Auto("DBZ645",2,true);
-        horasAlquilerActual = 26;
-        autoActual_1 = auto_1;
-        alquilerActual = new Alquiler(clienteActual_1,autoActual_1, fechaActual, horasAlquilerActual);
-        int descuento = alquilerActual.ObtenerDescuento(historialAlquiler);
-        System.out.println(descuento);
-        
-        System.out.println("Quinto caso de prueba");
-        fechaActual = LocalDate.parse("19/07/2021",DateTimeFormatter.ofPattern("d/M/yyy"));
-        auto_1 = new Auto("DBZ645",2,true);
-        horasAlquilerActual = 12;
-        autoActual_1 = auto_1;
-        alquilerActual = new Alquiler(clienteActual_1,autoActual_1, fechaActual, horasAlquilerActual);
-        descuento = alquilerActual.ObtenerDescuento(historialAlquiler);
-        System.out.println(descuento);
+        puedeAlquilar = Alquiler.PuedeAlquilar(historial, cliente_1);
+        System.out.println("2° CASO DE PRUEBA");
+        System.out.println(puedeAlquilar);
     }
     
 }

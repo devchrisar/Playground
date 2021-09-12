@@ -97,10 +97,13 @@ public class Alquiler {
     }
     public static boolean PuedeAlquilar(Alquiler[] historial, Cliente cliente)
     {
+        int contarAccidentes = 0;
         for(int i=0; i< historial.length; i++)
         {
-
+            if(historial[i].getCliente().getCedula().equals(cliente.getCedula()) && historial[i].getCliente().getNombre().equals(cliente.getNombre()) ){
+                contarAccidentes++;
+            }
         }
-        return false;
+        return (contarAccidentes >= 3)?false:true;
     }
 }
