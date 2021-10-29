@@ -1,9 +1,11 @@
     //campos datos usuarios 
-    let registros = [];
+
+    let registros = []; 
+
 
     function agregarRegistro() 
     { 
-        function Registros(usuario, contrasena, confirmar_contrasena) 
+        function Registros (usuario, contrasena, confirmar_contrasena) 
             { 
                 this.usuario = usuario; 
                 this.contrasena = contrasena; 
@@ -14,34 +16,31 @@
         const valorContrasena = document.getElementById("in_contrasena").value; 
         const valorConfirmar_contrasena = document.getElementById("in_confirmar_contrasena").value;  
         const usuarioCreado = new Registros (valorUsuario,valorContrasena,valorConfirmar_contrasena); 
-        registros.push(usuarioCreado);
+        registros.push (usuarioCreado);
         console.log(usuarioCreado); 
         console.log(registros); 
-        registros = OrdenarArreglo(registros);
+        //registros = OrdenarArreglo(registros);
         document.getElementById("in_nombre_usuario").value= "";
         document.getElementById("in_contrasena").value= "";
         document.getElementById("in_confirmar_contrasena").value="";
         
     } 
-    function OrdenarArreglo(registros) 
-    {
-        registros.sort((a, b) => 
-        {
-            const aSorting = a.usuario.toLowerCase();
-            const bSorting = b.usuario.toLowerCase();
-            if (aSorting < bSorting) 
-            {
+    
+    function OrdenarArreglo (arreglo){
+        arreglo.sort((a,b) => {
+            if (a.usuario.toLowerCase() < b.usuario.toLowerCase()){
                 return -1;
             }
-            if (aSorting > bSorting) 
-            {
+            else if (a.usuario.toLowerCase() > b.usuario.toLowerCase()){
                 return 1;
             }
-            return 0;
+                return 0; 
         });
+        console.log(arreglo);
+        return arreglo;
     }
-    registros.sort( OrdenarArreglo );
+    
     module.exports.registros = registros;
     module.exports.OrdenarArreglo = OrdenarArreglo;
-    module.exports.agregarRegistro = agregarRegistro;
+    module.exports.agregarRegistro = agregarRegistro; 
     
