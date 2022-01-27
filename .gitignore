@@ -1,3 +1,13 @@
+**.env**
+**/node_modules
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
 /ejercicios_mintic2022/ciclo 02/programas/Persona/nbproject/private/
 /ejercicios_mintic2022/ciclo 02/programas/Persona/build/
 /ejercicios_mintic2022/ciclo 02/programas/Pscanner/nbproject/private/

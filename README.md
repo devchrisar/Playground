@@ -1,6 +1,6 @@
 # ejercicios_mintic2022
 
-![N|Solid](https://misiontic.ucaldas.edu.co/pluginfile.php/1/theme_mb2nl/logo/1626194708/logos1.png)
+![N|Solid](https://fauna.digital/udea/misiontic2.png)
 Code of all the programs carried out during the 4 cycles of the 2022 `MisionTic` programming route of the `Universidad Pontificia Bolivariana`
 
 # ejercicios_Python
